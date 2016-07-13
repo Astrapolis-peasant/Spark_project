@@ -3,6 +3,10 @@ import pyspark
 from pyspark.sql import HiveContext
 import sys
 import os
+import time
+import dateutil.parser
+from scipy.interpolate import interp1d
+
 
 # zip rows(lists)                                                                                                                          
 def parse_list(p):
@@ -17,11 +21,13 @@ def unix_time(x):
     return time.mktime(dt.timetuple())
 
 def predict(x):
-    if len(x) >= 2:
-        pre_y = [unix_time(p[3]) for p in x ]
-        pre_x = [p[-2] for p in x ]
+    pre_x = [p[-2] for p in x if p[-2]!=None]
+    if len(pre_x) >= 2:
+        pre_y = [unix_time(p[3]) for p in x if p[-2]!=None]
         f = interp1d(pre_x, pre_y)
-    return [(p[-4],f(p[-2]+p[-3])) for p in x] 
+    else:
+        return []
+    return [(p[-4],f(p[-2]+p[-3])) for p in x if p[-2]!=None and (p[-2]+p[-3]) <= pre_x[-1]]
 
 if __name__=='__main__':
     sc = pyspark.SparkContext()
@@ -33,7 +39,8 @@ if __name__=='__main__':
         query = fr.read()
     output = sqlContext.sql(query)     
     output.flatMap(parse_list)\
+          .map(lambda x:((x[5],x[6]),x)).groupByKey() \
+          .flatMap(lambda x: predict(x[1]))\
           .map(lambda x: ",".join(map(str, x)))\
-          .map(lambda x:((x[5],x[6]),x)).groupByKey().mapValues(list)\
-          .map(lambda x: predict(x[1]))
-
+          .map(lambda x: x.replace('MTA NYCT_', '').replace('MTA BC_','').replace('MTA_',''))\
+          .saveAsTextFile(sys.argv[-1])
