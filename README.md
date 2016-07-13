@@ -17,6 +17,7 @@ groupByKey & Interpolate
 use groupBykey to cast interpolation of time&distance to all trips
 ```
 Read csv using Spark_CSV tool
-```https://github.com/databricks/spark-csv
+```
+https://github.com/databricks/spark-csv
 ```
 SparkSQL manipulation
