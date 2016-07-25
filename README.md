@@ -10,9 +10,9 @@ sqlContext.read.json()
 ```
 - __Extract elements from JSON using Spark SQL Query__
 
-`SELECT XXX FROM table`. Check [spark_extract.sql](https://github.com/sarangof/Bus-Capstone/blob/master/Spark/spark_extract.sql) for details
+    `SELECT XXX FROM table`. Check [spark_extract.sql](https://github.com/sarangof/Bus-Capstone/blob/master/Spark/spark_extract.sql) for details
 
-Check [Constructed Schema](https://github.com/bonanyuan/Spark_project#data-schema)
+    Check [Constructed Schema](https://github.com/bonanyuan/Spark_project#data-schema)
 
 - __Flatten Arrays__ using `flatMap(zip([columns]))`
 ```
@@ -27,9 +27,9 @@ Check [Constructed Schema](https://github.com/bonanyuan/Spark_project#data-schem
   For more information:[Scipy Interpolate1D](http://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.interp1d.html#scipy.interpolate.interp1d)
 
 - __Read CSV using Spark_CSV tool__
-```
-sqlContext.read.format('com.databricks.spark.csv').options(header='true').load()
-```
+    ```
+    sqlContext.read.format('com.databricks.spark.csv').options(header='true').load()
+    ```
 for more info,check [Spark_CSV_package](https://github.com/databricks/spark-csv)
 
 - __SparkSQL manipulation__
