@@ -2,12 +2,8 @@
 
 ##### This project reads 3 TB of nested JSON data and apply bunch of spark techniques to analysis the bus delays and headways
 Original [Sample Data](https://raw.githubusercontent.com/sarangof/Bus-Capstone/master/Spark/test.jsons) and [Schema](https://github.com/sarangof/Bus-Capstone/blob/master/Spark/schema.txt)
-
-## SETUP
-`./xxxx.sh xxxx.py xxx.sql output xxxx.csv [NumofExecutors]` to submit the job on server
-
 ## Techniques Included
-Read [Ipython Notebok](https://github.com/bonanyuan/Spark_project/blob/master/Bus_Time.ipynb) for complete explanation of every step
+
 - __Read JSON__
 ```
 sqlContext.read.json()
@@ -23,11 +19,11 @@ sqlContext.read.json()
 ```
 - __groupByKey & Interpolate__
 
-⋅⋅⋅use `groupBykey` to cast interpolation of time&distance to all trips.
+  * use `groupBykey` to cast interpolation of time&distance to all trips.
 
-⋅⋅⋅use Scipy Interpolte Tool to interpolate all stop times.
+  * use Scipy Interpolte Tool to interpolate all stop times.
 
-For more information:[Scipy Interpolate1D](http://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.interp1d.html#scipy.interpolate.interp1d)
+  * For more information:[Scipy Interpolate1D](http://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.interp1d.html#scipy.interpolate.interp1d)
 
 - __Read CSV using Spark_CSV tool__
 ```
@@ -41,7 +37,7 @@ for more info,check [Spark_CSV_package](https://github.com/databricks/spark-csv)
 
    * `IF` & `COUNT` to calculate the time performance by comparing with GTFS Schedule Data.
 
-    * `IF` clause in spark is same as `CASE` in regular SQL
+    * __if__ clause in spark is same as __case__ in regular SQL
 
     For more info.check [ontime_ratio.sql](https://github.com/sarangof/Bus-Capstone/blob/master/Spark/ontime_ratio/ontime_ratio.sql)
 
