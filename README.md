@@ -12,6 +12,7 @@ sqlContext.read.json()
 
 `SELECT XXX FROM table`. Check [spark_extract.sql](https://github.com/sarangof/Bus-Capstone/blob/master/Spark/spark_extract.sql) for details
 
+Check [Constructed Schema](https://github.com/bonanyuan/Spark_project#data-schema)
 
 - __Flatten Arrays__ using `flatMap(zip([columns]))`
 ```
