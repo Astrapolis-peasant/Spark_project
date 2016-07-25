@@ -23,7 +23,7 @@ sqlContext.read.json()
 
   * use Scipy Interpolte Tool to interpolate all stop times.
 
-  * For more information:[Scipy Interpolate1D](http://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.interp1d.html#scipy.interpolate.interp1d)
+  For more information:[Scipy Interpolate1D](http://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.interp1d.html#scipy.interpolate.interp1d)
 
 - __Read CSV using Spark_CSV tool__
 ```
