@@ -8,10 +8,10 @@ Original [Sample Data](https://raw.githubusercontent.com/sarangof/Bus-Capstone/m
 ```
 sqlContext.read.json()
 ```
-- __Extract elements from JSON using Spark Query__
+- __Extract elements from JSON using Spark SQL Query__
 
-[spark_extract.sql](https://github.com/sarangof/Bus-Capstone/blob/master/Spark/spark_extract.sql)
-`SELECT XXX FROM table`
+`SELECT XXX FROM table`. Check [spark_extract.sql](https://github.com/sarangof/Bus-Capstone/blob/master/Spark/spark_extract.sql) for details
+
 
 - __Flatten Arrays__ using `flatMap(zip([columns]))`
 ```
