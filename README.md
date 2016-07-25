@@ -1,23 +1,33 @@
-# Spark_project
+##Bus Reliability Metrics using Public MTA Bus Time Data
+#### Capstone Project of the New York University Center for Urban Science and Progress
 
-## This project reads 3 TB of nested JSON data and apply bunch of spark techniques to analysis the bus delays and headways
+* [Technical report] (https://github.com/sarangof/Bus-Capstone/blob/master/paper/technical_report.pdf)
 
-## Techniques Included
-
-
-Read JSON & Read home SQL query to select the right elements
+* [Sponsor report] (https://github.com/sarangof/Bus-Capstone/blob/master/paper/sponsor_report.pdf)
 
 
-Flatten Arrays using flatMap
+Inline-style: 
+![alt text](https://github.com/sarangof/Bus-Capstone/blob/master/plots/on_time_performance_stops.png "Sample of on time performance")
+
+
+
+#### Data retrieval modules
+##### siri_parser
+*method* siri_parser.**json_to_df**(a)
+
+Single required argument *a* is a single json string received from the siri api.
+    
+return a pandas dataframe with the following columns: `Line`, `RecordedAtTime`, `Latitude`, `Longitude`, `Trip`, `TripDate`, `ResponseTimeStamp`
+
+##### gtfs
+
+### Spark Method
+
+The data processing and manipulating is all done in Spark for the whole dataset in 2015.
+Use command 
 ```
-(1,2,3) (a,b,c) ($,#,&) => (1,a,$),(2,b,#),(3,c,&)
+./XXX.sh XXX.py XXX.sql output XXX.csv [NumofExecutors]
 ```
-groupByKey & Interpolate
-```
-use groupBykey to cast interpolation of time&distance to all trips
-```
-Read csv using Spark_CSV tool
-```
-https://github.com/databricks/spark-csv
-```
-SparkSQL manipulation
+to submit the job
+#### For more info
+please refer [Spark](https://github.com/sarangof/Bus-Capstone/tree/master/Spark) for more the information

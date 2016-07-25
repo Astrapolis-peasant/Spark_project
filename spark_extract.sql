@@ -9,6 +9,5 @@ select Siri.ServiceDelivery.VehicleMonitoringDelivery.VehicleActivity[0].Monitor
 	   Siri.ServiceDelivery.VehicleMonitoringDelivery.VehicleActivity[0].MonitoredVehicleJourney.MonitoredCall.StopPointRef as MonitoredCallRef,
 	   Siri.ServiceDelivery.VehicleMonitoringDelivery.VehicleActivity[0].MonitoredVehicleJourney.MonitoredCall.Extensions.Distances.DistanceFromCall as DistFromCall,
 	   Siri.ServiceDelivery.VehicleMonitoringDelivery.VehicleActivity[0].MonitoredVehicleJourney.MonitoredCall.Extensions.Distances.CallDistanceAlongRoute as CallDistAlongRoute,
-	   Siri.ServiceDelivery.VehicleMonitoringDelivery.VehicleActivity[0].MonitoredVehicleJourney.MonitoredCall.Extensions.Distances.PresentableDistance as PresentableDistance,
-	   Siri.ServiceDelivery.VehicleMonitoringDelivery.VehicleActivity[0].MonitoredVehicleJourney.DestinationRef as destination
+	   Siri.ServiceDelivery.VehicleMonitoringDelivery.VehicleActivity[0].MonitoredVehicleJourney.MonitoredCall.Extensions.Distances.PresentableDistance as PresentableDistance
 from bus
