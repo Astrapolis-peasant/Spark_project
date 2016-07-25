@@ -37,7 +37,7 @@ for more info,check [Spark_CSV_package](https://github.com/databricks/spark-csv)
 
    * `IF` & `COUNT` to calculate the time performance by comparing with GTFS Schedule Data.
 
-    * `__if__` clause in spark is same as `__case__` in regular SQL
+    * `IF` clause in spark is same as `CASE` in regular SQL
 
     For more info.check [ontime_ratio.sql](https://github.com/sarangof/Bus-Capstone/blob/master/Spark/ontime_ratio/ontime_ratio.sql)
 
