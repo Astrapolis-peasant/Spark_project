@@ -2,8 +2,12 @@
 
 ##### This project reads 3 TB of nested JSON data and apply bunch of spark techniques to analysis the bus delays and headways
 Original [Sample Data](https://raw.githubusercontent.com/sarangof/Bus-Capstone/master/Spark/test.jsons) and [Schema](https://github.com/sarangof/Bus-Capstone/blob/master/Spark/schema.txt)
-## Techniques Included
 
+## SETUP
+`./xxxx.sh xxxx.py xxx.sql output xxxx.csv [NumofExecutors]` to submit the job on server
+
+## Techniques Included
+Read [Ipython Notebok](https://github.com/bonanyuan/Spark_project/blob/master/Bus_Time.ipynb) for complete explanation of every step
 - __Read JSON__
 ```
 sqlContext.read.json()
